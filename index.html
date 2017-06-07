@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Experimental Design</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+    
+    <link rel="stylesheet" type="text/css" href="style.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="fdw-demo.css" media="all" />
+    <link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
+
+	<script type="text/javascript" src="js/jquery-v1.8.2.js"></script>
+	<script type="text/javascript" src="js/jquery-events-frame.js"></script>
+	<script type="text/javascript" src="js/jparallax.js"></script>
+</head>
+	
+<body class="media">	
+<script>
+     $(function() {
+	   if(jQuery('#parallax').length != 0){
+		if(jQuery(window).width() > 980){
+			
+			//apply parallax effect
+			jQuery('#parallax .parallax-layer').parallax(
+				{mouseport: jQuery('#parallax')}
+			);
+		
+			$(window).load(function(){
+				jQuery('#parallax .parallax-layer').css('display','block');
+			});
+		}
+	}
+ }); 
+</script>
+
+<div id="container">				
+			<header>
+				<h1><strong>My Experimental Design</strong></h1>
+            </header>    
+
+    
+<div id="parallax" class="parallax-viewport">
+    <div class="parallax-layer parallax2">
+    <img src="images/birds1.gif" alt="bird1">
+    </div>
+  
+    <div class="parallax-layer parallax3">
+    <img src="images/plane2.png" alt="big plane">
+    </div>
+    
+    <div class="parallax-layer parallax3">
+    <img src="images/crashpogo.png" alt="plane" height="200" width="100">
+    </div>
+     
+    <div class="parallax-layer parallax1"> 
+    <img src="images/balloons-1.png" alt="baloon">
+    </div> 
+    
+</div>                      
+</div>
+    <div class="parallax-layer parallax4" id="myBird">
+    <img src="images/birds2.gif" alt="eagle">
+    </div>   
+    <script type="text/javascript" src="js/TweenMax.min.js"></script>  
+    
+    <script type="text/javascript">
+    (function(){
+        var tlBird = new TimelineMax({repeat: -1});
+        
+        tlBird.to('#myBird', 30, {backgroundPositionX: 2000, ease: Power0.easeOut });       
+    }());   
+    </script>
+       
+<script type="text/javascript">
+var get_height = window.innerHeight; 
+var get_height1 =  get_height - 25;
+var get_container = document.getElementById('container');
+get_container.style.height =  get_height1 + 'px';
+       
+</script>
+</body>
+</html>
